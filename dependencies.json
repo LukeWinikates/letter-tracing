@@ -1,6 +1,7 @@
 {
   "noto-sans": {
-    "filename": "Noto_Sans_JP.zip",
+    "filename_zip": "Noto_Sans_JP.zip",
+    "filename_otf": "NotoSansJP-Thin.otf",
     "url": "https://fonts.google.com/download?family=Noto%20Sans%20JP",
     "license": "OFL"
   }

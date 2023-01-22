@@ -1,5 +1,5 @@
 
-.PHONY: fonts build/svg/noto-sans
+.PHONY: fonts clean build/svg/noto-sans
 fonts: build/svg/noto-sans
 
 tmp/Noto_Sans_JP.zip:
@@ -8,8 +8,8 @@ tmp/Noto_Sans_JP.zip:
 tmp/noto-sans:
 	mkdir -p $@
 
-tmp/noto-sans/NotoSansJP-Regular.otf: tmp/Noto_Sans_JP.zip | tmp/noto-sans
-	unzip -d tmp/noto-sans tmp/Noto_Sans_JP.zip NotoSansJP-Regular.otf OFL.txt
+tmp/noto-sans/NotoSansJP-Thin.otf: tmp/Noto_Sans_JP.zip | tmp/noto-sans
+	unzip -d tmp/noto-sans tmp/Noto_Sans_JP.zip NotoSansJP-Thin.otf OFL.txt
 
 build:
 	mkdir -p $@
@@ -19,7 +19,7 @@ build/svg:
 
 build/svg/noto-sans: tmp/noto-sans/NotoSansJP-Regular.otf | build/svg
 	mkdir -p $@
-	fontforge -script scripts/extract.py tmp/noto-sans/NotoSansJP-Regular.otf 13 build/svg/noto-sans
+	fontforge -script scripts/extract.py tmp/noto-sans/NotoSansJP-Thin.otf 13 build/svg/noto-sans
 
 clean:
 	@-rm -rf build
